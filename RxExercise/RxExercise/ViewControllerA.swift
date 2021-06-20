@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-class ViewController: UIViewController {
+class ViewControllerA: UIViewController {
 
     let bag = DisposeBag()
     let pb1 = PublishSubject<Int>()
@@ -34,33 +34,11 @@ class ViewController: UIViewController {
         /*
          result ▼
          number 1
-         number 5
+         number 4
          */
     }
     
     func combineLatest() {
-//        NSLog("combineLastest")
-//
-//        let source = RxSwift.Observable<Int>.interval(1, scheduler: MainScheduler.asyncInstance).take(3);
-//
-//        let newest = RxSwift.Observable<Int>.interval(2, scheduler: MainScheduler.asyncInstance).take(6);
-//
-//
-//        Observable<String>.combineLatest(source, newest) { (x ,y) -> String in
-//            return "First: \(x), Secound: \(y), Sum: \(x + y)"
-//        }.subscribe {
-//            event in
-//            switch event {
-//            case .next(let element):
-//                NSLog("element: \(element)");
-//            case .error(let error):
-//                print("error: \(error)");
-//            case .completed:
-//                print("complete");
-//            }
-//        }.disposed(by: self.bag);
-        
-        
         Observable<String>.combineLatest(pb1, pb2) { (o1, o2) -> String in
             return "First: " + "\(o1)" + ", Secound: " + "\(o2)"
         }.subscribe {
