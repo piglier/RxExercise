@@ -12,7 +12,7 @@ class VCObservable: UIViewController {
     var disposedbag = DisposeBag();
     
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad();
         setbackground();
         addButton();
         testJust();

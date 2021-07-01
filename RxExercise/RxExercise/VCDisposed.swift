@@ -14,6 +14,7 @@ class VCDisposed: UIViewController {
     var disposableBag = DisposeBag();
     
     override func viewDidLoad() {
+        super.viewDidLoad();
         setBakground();
         addButton();
         addObservable();
